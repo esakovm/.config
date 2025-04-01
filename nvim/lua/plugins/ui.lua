@@ -9,6 +9,9 @@ return {
 					find = "No information available",
 				},
 				opts = { skip = true },
+				presets = {
+					inc_rename = true,
+				},
 			})
 			local focused = true
 			vim.api.nvim_create_autocmd("FocusGained", {
