@@ -9,13 +9,15 @@ return {
 				"luacheck",
 				"shellcheck",
 				"shfmt",
-				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
+				"eslint-lsp",
+				"prettier",
+				"some-sass-language-server",
+				"biome",
 			})
 		end,
 	},
-
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
@@ -24,10 +26,17 @@ return {
 			---@type lspconfig.options
 			servers = {
 				cssls = {},
-				tailwindcss = {
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
+				somesass_ls = {
+					filetypes = { "sass", "scss", "less", "css" },
+				},
+				eslint = {
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "json" }, -- ???????? ??????????? ???? ??????
+					settings = {
+						eslint = {
+							validate = "on",
+							run = "onSave",
+						},
+					},
 				},
 				tsserver = {
 					root_dir = function(...)
