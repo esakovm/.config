@@ -6,4 +6,9 @@ debug
 foo.*
 *.log
 data
-yarn/*
+.neoconf.json
+LICENSE
+README.md
+lazy-lock.json
+lazyvim.json
+stylua.toml
